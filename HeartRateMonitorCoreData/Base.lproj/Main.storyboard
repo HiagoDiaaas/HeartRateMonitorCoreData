@@ -47,23 +47,39 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISx-ko-PDY">
+                                <rect key="frame" x="16" y="107" width="146" height="64"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Connect">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="connectButtonClicked:" destination="hh5-DK-AMg" eventType="touchUpInside" id="Z54-yh-QZw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qI8-aP-48x"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yXs-fA-MVC" firstAttribute="centerY" secondItem="PE4-TP-Al9" secondAttribute="centerY" id="8dN-ji-Dd8"/>
                             <constraint firstItem="yXs-fA-MVC" firstAttribute="centerX" secondItem="PE4-TP-Al9" secondAttribute="centerX" id="BF6-qY-3oG"/>
+                            <constraint firstItem="ISx-ko-PDY" firstAttribute="leading" secondItem="PE4-TP-Al9" secondAttribute="leadingMargin" id="CU4-cz-L0p"/>
+                            <constraint firstItem="ISx-ko-PDY" firstAttribute="top" secondItem="qI8-aP-48x" secondAttribute="top" constant="48" id="Nir-Gw-wqB"/>
+                            <constraint firstItem="qI8-aP-48x" firstAttribute="trailing" secondItem="ISx-ko-PDY" secondAttribute="trailing" constant="231" id="WpU-L5-z0M"/>
                             <constraint firstItem="yXs-fA-MVC" firstAttribute="top" secondItem="qI8-aP-48x" secondAttribute="top" constant="185.33333333333331" id="b8L-En-Xnr"/>
+                            <constraint firstItem="yXs-fA-MVC" firstAttribute="top" secondItem="ISx-ko-PDY" secondAttribute="bottom" constant="73.333333333333371" id="geI-c5-q8c"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Heart Rate Monitor" id="NpO-lc-qc5"/>
                     <connections>
+                        <outlet property="connectButton" destination="ISx-ko-PDY" id="lP9-xh-nX3"/>
                         <outlet property="heartRateLabel" destination="J2x-aZ-9QP" id="nsG-gX-YOL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SiL-iR-7Do" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="903" y="-15"/>
+            <point key="canvasLocation" x="901.52671755725191" y="-15.492957746478874"/>
         </scene>
     </scenes>
 </document>

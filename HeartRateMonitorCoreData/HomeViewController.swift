@@ -15,6 +15,8 @@ let heartRateMeasurementCharacteristicCBUUID = CBUUID(string: "2A37")
 
 class HRMViewController: UIViewController {
 
+    @IBOutlet weak var connectButton: UIButton!
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var arrayData = [HeartRateDataItem]()
@@ -26,6 +28,9 @@ class HRMViewController: UIViewController {
     var heartRatePeripheral: CBPeripheral!
     
     
+    @IBAction func connectButtonClicked(_ sender: Any) {
+        centralManager.connect(heartRatePeripheral)
+    }
     
     
 
@@ -136,7 +141,7 @@ extension HRMViewController: CBCentralManagerDelegate {
         heartRatePeripheral = peripheral
         heartRatePeripheral.delegate = self
         centralManager.stopScan()
-        centralManager.connect(heartRatePeripheral)
+        
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
