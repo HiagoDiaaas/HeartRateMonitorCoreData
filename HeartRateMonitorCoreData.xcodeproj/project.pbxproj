@@ -16,6 +16,7 @@
 		F36D1AED2984B93C00D7EAB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F36D1AEB2984B93C00D7EAB1 /* LaunchScreen.storyboard */; };
 		F36D1AF62984BA5C00D7EAB1 /* HeartRateDataItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36D1AF42984BA5C00D7EAB1 /* HeartRateDataItem+CoreDataClass.swift */; };
 		F36D1AF72984BA5C00D7EAB1 /* HeartRateDataItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36D1AF52984BA5C00D7EAB1 /* HeartRateDataItem+CoreDataProperties.swift */; };
+		F36D1AFA2984D3A300D7EAB1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36D1AF92984D3A300D7EAB1 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F36D1AEE2984B93C00D7EAB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F36D1AF42984BA5C00D7EAB1 /* HeartRateDataItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeartRateDataItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F36D1AF52984BA5C00D7EAB1 /* HeartRateDataItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeartRateDataItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F36D1AF92984D3A300D7EAB1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				F36D1ADD2984B93A00D7EAB1 /* AppDelegate.swift */,
 				F36D1ADF2984B93A00D7EAB1 /* SceneDelegate.swift */,
 				F36D1AE12984B93A00D7EAB1 /* HomeViewController.swift */,
+				F36D1AF92984D3A300D7EAB1 /* DetailViewController.swift */,
 				F36D1AE32984B93A00D7EAB1 /* Main.storyboard */,
 				F36D1AE92984B93C00D7EAB1 /* Assets.xcassets */,
 				F36D1AEB2984B93C00D7EAB1 /* LaunchScreen.storyboard */,
@@ -161,6 +164,7 @@
 				F36D1AE22984B93A00D7EAB1 /* HomeViewController.swift in Sources */,
 				F36D1ADE2984B93A00D7EAB1 /* AppDelegate.swift in Sources */,
 				F36D1AE02984B93A00D7EAB1 /* SceneDelegate.swift in Sources */,
+				F36D1AFA2984D3A300D7EAB1 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

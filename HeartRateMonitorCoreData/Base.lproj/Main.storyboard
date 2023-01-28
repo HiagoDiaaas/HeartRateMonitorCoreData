@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hh5-DK-AMg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pht-RX-d3e">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="yXs-fA-MVC">
-                                <rect key="frame" x="60.666666666666657" y="244.33333333333334" width="272" height="363.33333333333326"/>
+                                <rect key="frame" x="60.666666666666657" y="288.33333333333337" width="272" height="275.33333333333337"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UTD-th-9cE">
-                                        <rect key="frame" x="0.0" y="0.0" width="272" height="231.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="272" height="175.33333333333334"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pmk-Or-DWc">
-                                                <rect key="frame" x="0.0" y="0.0" width="272" height="40.666666666666664"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="272" height="0.0"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Current Heart Rate">
                                                         <attributes>
@@ -34,8 +35,8 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2x-aZ-9QP">
-                                                <rect key="frame" x="67.333333333333329" y="40.666666666666657" width="137.33333333333337" height="191"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2x-aZ-9QP">
+                                                <rect key="frame" x="67.333333333333329" y="0.0" width="137.33333333333337" height="175.33333333333334"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="160"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -43,12 +44,12 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="F0N-Bd-vNp">
-                                        <rect key="frame" x="0.0" y="331.66666666666663" width="272" height="31.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="275.33333333333331" width="272" height="0.0"/>
                                     </stackView>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISx-ko-PDY">
-                                <rect key="frame" x="16" y="107" width="146" height="64"/>
+                                <rect key="frame" x="16" y="151" width="146" height="64"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Connect">
@@ -58,17 +59,34 @@
                                     <action selector="connectButtonClicked:" destination="hh5-DK-AMg" eventType="touchUpInside" id="Z54-yh-QZw"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbw-YC-CX9">
+                                <rect key="frame" x="220" y="151" width="146" height="64"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="BPM DATA">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="P6u-XP-RZS" kind="show" id="PD8-wu-fjH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qI8-aP-48x"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="rbw-YC-CX9" firstAttribute="leading" secondItem="ISx-ko-PDY" secondAttribute="trailing" constant="58" id="09L-Vk-T84"/>
+                            <constraint firstItem="yXs-fA-MVC" firstAttribute="top" secondItem="rbw-YC-CX9" secondAttribute="bottom" constant="73.333333333333371" id="0pI-Ke-FrM"/>
                             <constraint firstItem="yXs-fA-MVC" firstAttribute="centerY" secondItem="PE4-TP-Al9" secondAttribute="centerY" id="8dN-ji-Dd8"/>
                             <constraint firstItem="yXs-fA-MVC" firstAttribute="centerX" secondItem="PE4-TP-Al9" secondAttribute="centerX" id="BF6-qY-3oG"/>
+                            <constraint firstItem="rbw-YC-CX9" firstAttribute="baseline" secondItem="ISx-ko-PDY" secondAttribute="baseline" id="CM9-F6-ir4"/>
                             <constraint firstItem="ISx-ko-PDY" firstAttribute="leading" secondItem="PE4-TP-Al9" secondAttribute="leadingMargin" id="CU4-cz-L0p"/>
                             <constraint firstItem="ISx-ko-PDY" firstAttribute="top" secondItem="qI8-aP-48x" secondAttribute="top" constant="48" id="Nir-Gw-wqB"/>
+                            <constraint firstItem="rbw-YC-CX9" firstAttribute="baseline" secondItem="ISx-ko-PDY" secondAttribute="firstBaseline" id="RkA-UP-CD8"/>
+                            <constraint firstItem="rbw-YC-CX9" firstAttribute="top" secondItem="qI8-aP-48x" secondAttribute="top" constant="48" id="UeM-d0-Kh0"/>
                             <constraint firstItem="qI8-aP-48x" firstAttribute="trailing" secondItem="ISx-ko-PDY" secondAttribute="trailing" constant="231" id="WpU-L5-z0M"/>
                             <constraint firstItem="yXs-fA-MVC" firstAttribute="top" secondItem="qI8-aP-48x" secondAttribute="top" constant="185.33333333333331" id="b8L-En-Xnr"/>
                             <constraint firstItem="yXs-fA-MVC" firstAttribute="top" secondItem="ISx-ko-PDY" secondAttribute="bottom" constant="73.333333333333371" id="geI-c5-q8c"/>
+                            <constraint firstItem="qI8-aP-48x" firstAttribute="trailing" secondItem="rbw-YC-CX9" secondAttribute="trailing" constant="27" id="hnV-AD-D2a"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Heart Rate Monitor" id="NpO-lc-qc5"/>
@@ -79,7 +97,83 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SiL-iR-7Do" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1828.2442748091603" y="-15.492957746478874"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Jxw-5h-ucC">
+            <objects>
+                <viewController id="P6u-XP-RZS" customClass="DetailViewController" customModule="HeartRateMonitorCoreData" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QZP-u6-UCz">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hGa-Tx-Oa6">
+                                <rect key="frame" x="0.0" y="183" width="403" height="486"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bpmCell" id="CJR-th-PcJ">
+                                        <rect key="frame" x="0.0" y="50" width="403" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CJR-th-PcJ" id="YVM-Xz-lUJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="403" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BPM DATA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utf-hh-4Ed">
+                                <rect key="frame" x="153" y="131" width="224" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="o4j-Is-lHJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SKE-5d-fjY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="utf-hh-4Ed" firstAttribute="trailing" secondItem="QZP-u6-UCz" secondAttribute="trailingMargin" id="4rW-tN-p8u"/>
+                            <constraint firstItem="hGa-Tx-Oa6" firstAttribute="top" secondItem="utf-hh-4Ed" secondAttribute="bottom" constant="31" id="SKE-PA-HTI"/>
+                            <constraint firstItem="utf-hh-4Ed" firstAttribute="top" secondItem="SKE-5d-fjY" secondAttribute="top" constant="28" id="TWX-m3-EX7"/>
+                            <constraint firstItem="hGa-Tx-Oa6" firstAttribute="centerY" secondItem="QZP-u6-UCz" secondAttribute="centerY" id="VTG-Af-6wg"/>
+                            <constraint firstItem="utf-hh-4Ed" firstAttribute="leading" secondItem="SKE-5d-fjY" secondAttribute="leading" constant="153" id="ijO-eq-nkY"/>
+                            <constraint firstItem="hGa-Tx-Oa6" firstAttribute="leading" secondItem="SKE-5d-fjY" secondAttribute="leading" id="r0t-Y5-0vd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hGa-Tx-Oa6" secondAttribute="trailing" constant="-26" id="ysF-eb-hME"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="PoD-Kr-87g"/>
+                    <connections>
+                        <outlet property="BPMTableView" destination="hGa-Tx-Oa6" id="515-Ga-E0c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="23a-gL-tOj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3095.419847328244" y="-15.492957746478874"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PIQ-Mw-CrI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pht-RX-d3e" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SYo-Up-yea">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hh5-DK-AMg" kind="relationship" relationship="rootViewController" id="J22-RX-0IB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qih-Jc-WUp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="901.52671755725191" y="-15.492957746478874"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

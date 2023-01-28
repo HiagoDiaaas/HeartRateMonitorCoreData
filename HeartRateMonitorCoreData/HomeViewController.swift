@@ -19,6 +19,7 @@ class HRMViewController: UIViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    var isPoweredOn = false
     var arrayData = [HeartRateDataItem]()
     
     @IBOutlet weak var heartRateLabel: UILabel!
@@ -29,7 +30,12 @@ class HRMViewController: UIViewController {
     
     
     @IBAction func connectButtonClicked(_ sender: Any) {
-        centralManager.connect(heartRatePeripheral)
+        if isPoweredOn {
+            centralManager.connect(heartRatePeripheral)
+        } else {
+            print("cannot connect")
+        }
+        
     }
     
     
@@ -129,6 +135,7 @@ extension HRMViewController: CBCentralManagerDelegate {
             print("central.state is .poweredOff")
           case .poweredOn:
             print("central.state is .poweredOn")
+            isPoweredOn = true
             centralManager.scanForPeripherals(withServices: [heartRateServiceCBUUID])
         @unknown default:
             print("ERROR")
