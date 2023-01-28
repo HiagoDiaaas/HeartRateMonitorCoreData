@@ -16,6 +16,7 @@ let heartRateMeasurementCharacteristicCBUUID = CBUUID(string: "2A37")
 class HRMViewController: UIViewController {
 
     @IBOutlet weak var connectButton: UIButton!
+    @IBOutlet weak var disconnectButton: UIButton!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -38,6 +39,20 @@ class HRMViewController: UIViewController {
         
     }
     
+    @IBAction func disconnectButtonClicked(_ sender: Any) {
+        if isPoweredOn {
+            if heartRatePeripheral.state == .connected {
+                centralManager.cancelPeripheralConnection(heartRatePeripheral)
+            } else {
+                print("peripheral not connected")
+            }
+            
+        } else {
+            print("pheripheral not connected")
+        }
+        
+        
+    }
     
 
   override func viewDidLoad() {
@@ -89,18 +104,6 @@ class HRMViewController: UIViewController {
         }
     }
 
-    
-    func deleteItem(item: HeartRateDataItem) {
-        context.delete(item)
-        
-        do {
-            try context.save()
-            getAllItems()
-        }
-        catch {
-            
-        }
-    }
     
     func resetAllRecords(in HeartRateDataItem : String)
         {
@@ -155,6 +158,14 @@ extension HRMViewController: CBCentralManagerDelegate {
         print("Connected!")
         heartRatePeripheral.discoverServices([heartRateServiceCBUUID])
 
+    }
+    
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        if error != nil {
+            print("Disconnection failed with error: \(error!.localizedDescription)")
+        } else {
+            print("Disconnected successfully")
+        }
     }
 }
 

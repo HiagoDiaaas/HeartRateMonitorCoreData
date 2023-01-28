@@ -13,7 +13,6 @@ class DetailViewController: UIViewController {
     var arrayData = [HeartRateDataItem]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         getAllItems()
@@ -36,11 +35,33 @@ class DetailViewController: UIViewController {
         }
     }
     
+    func deleteItem(item: HeartRateDataItem) {
+        context.delete(item)
+        
+        do {
+            try context.save()
+            getAllItems()
+        }
+        catch {
+            
+        }
+    }
+    
     
     
 }
 
 extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let item = arrayData[indexPath.row]
+        
+        if editingStyle == .delete {
+
+            self.deleteItem(item: item)
+
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayData.count

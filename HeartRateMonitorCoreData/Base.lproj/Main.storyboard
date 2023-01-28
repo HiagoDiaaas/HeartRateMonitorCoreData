@@ -11,7 +11,7 @@
         <!--Heart Rate Monitor-->
         <scene sceneID="Z6O-5b-XP3">
             <objects>
-                <viewController id="hh5-DK-AMg" customClass="HRMViewController" customModule="HeartRateMonitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hh5-DK-AMg" customClass="HRMViewController" customModule="HeartRateMonitorCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PE4-TP-Al9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,7 +49,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISx-ko-PDY">
-                                <rect key="frame" x="16" y="151" width="146" height="64"/>
+                                <rect key="frame" x="16" y="124.99999999999999" width="146" height="34.333333333333329"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Connect">
@@ -60,7 +60,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbw-YC-CX9">
-                                <rect key="frame" x="220" y="151" width="146" height="64"/>
+                                <rect key="frame" x="231" y="124.99999999999999" width="146" height="34.333333333333329"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="BPM DATA">
@@ -70,28 +70,37 @@
                                     <segue destination="P6u-XP-RZS" kind="show" id="PD8-wu-fjH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTx-ff-Ukk">
+                                <rect key="frame" x="141.33333333333334" y="183.33333333333334" width="110.33333333333334" height="34.333333333333343"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Disconnect"/>
+                                <connections>
+                                    <action selector="disconnectButtonClicked:" destination="hh5-DK-AMg" eventType="touchUpInside" id="o8Y-L2-kfd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qI8-aP-48x"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="rbw-YC-CX9" firstAttribute="leading" secondItem="ISx-ko-PDY" secondAttribute="trailing" constant="58" id="09L-Vk-T84"/>
-                            <constraint firstItem="yXs-fA-MVC" firstAttribute="top" secondItem="rbw-YC-CX9" secondAttribute="bottom" constant="73.333333333333371" id="0pI-Ke-FrM"/>
+                            <constraint firstItem="rbw-YC-CX9" firstAttribute="leading" secondItem="ISx-ko-PDY" secondAttribute="trailing" constant="69" id="09L-Vk-T84"/>
                             <constraint firstItem="yXs-fA-MVC" firstAttribute="centerY" secondItem="PE4-TP-Al9" secondAttribute="centerY" id="8dN-ji-Dd8"/>
+                            <constraint firstItem="bTx-ff-Ukk" firstAttribute="top" secondItem="ISx-ko-PDY" secondAttribute="bottom" constant="24" id="9pS-jR-GXl"/>
                             <constraint firstItem="yXs-fA-MVC" firstAttribute="centerX" secondItem="PE4-TP-Al9" secondAttribute="centerX" id="BF6-qY-3oG"/>
-                            <constraint firstItem="rbw-YC-CX9" firstAttribute="baseline" secondItem="ISx-ko-PDY" secondAttribute="baseline" id="CM9-F6-ir4"/>
                             <constraint firstItem="ISx-ko-PDY" firstAttribute="leading" secondItem="PE4-TP-Al9" secondAttribute="leadingMargin" id="CU4-cz-L0p"/>
-                            <constraint firstItem="ISx-ko-PDY" firstAttribute="top" secondItem="qI8-aP-48x" secondAttribute="top" constant="48" id="Nir-Gw-wqB"/>
-                            <constraint firstItem="rbw-YC-CX9" firstAttribute="baseline" secondItem="ISx-ko-PDY" secondAttribute="firstBaseline" id="RkA-UP-CD8"/>
-                            <constraint firstItem="rbw-YC-CX9" firstAttribute="top" secondItem="qI8-aP-48x" secondAttribute="top" constant="48" id="UeM-d0-Kh0"/>
+                            <constraint firstItem="ISx-ko-PDY" firstAttribute="top" secondItem="qI8-aP-48x" secondAttribute="top" constant="22" id="Nir-Gw-wqB"/>
+                            <constraint firstItem="rbw-YC-CX9" firstAttribute="top" secondItem="qI8-aP-48x" secondAttribute="top" constant="22" id="UeM-d0-Kh0"/>
                             <constraint firstItem="qI8-aP-48x" firstAttribute="trailing" secondItem="ISx-ko-PDY" secondAttribute="trailing" constant="231" id="WpU-L5-z0M"/>
+                            <constraint firstItem="bTx-ff-Ukk" firstAttribute="centerX" secondItem="yXs-fA-MVC" secondAttribute="centerX" id="XYe-uv-7dk"/>
                             <constraint firstItem="yXs-fA-MVC" firstAttribute="top" secondItem="qI8-aP-48x" secondAttribute="top" constant="185.33333333333331" id="b8L-En-Xnr"/>
-                            <constraint firstItem="yXs-fA-MVC" firstAttribute="top" secondItem="ISx-ko-PDY" secondAttribute="bottom" constant="73.333333333333371" id="geI-c5-q8c"/>
-                            <constraint firstItem="qI8-aP-48x" firstAttribute="trailing" secondItem="rbw-YC-CX9" secondAttribute="trailing" constant="27" id="hnV-AD-D2a"/>
+                            <constraint firstItem="qI8-aP-48x" firstAttribute="trailing" secondItem="rbw-YC-CX9" secondAttribute="trailing" constant="16" id="hnV-AD-D2a"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Heart Rate Monitor" id="NpO-lc-qc5"/>
                     <connections>
                         <outlet property="connectButton" destination="ISx-ko-PDY" id="lP9-xh-nX3"/>
+                        <outlet property="disconnectButton" destination="bTx-ff-Ukk" id="lrR-nG-A4s"/>
                         <outlet property="heartRateLabel" destination="J2x-aZ-9QP" id="nsG-gX-YOL"/>
                     </connections>
                 </viewController>
