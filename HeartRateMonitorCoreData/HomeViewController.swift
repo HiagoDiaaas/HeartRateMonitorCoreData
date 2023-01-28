@@ -7,6 +7,7 @@
 
 import CoreBluetooth
 import UIKit
+import CoreData
 
 let heartRateServiceCBUUID = CBUUID(string: "0x180D")
 let heartRateMeasurementCharacteristicCBUUID = CBUUID(string: "2A37")
@@ -14,6 +15,9 @@ let heartRateMeasurementCharacteristicCBUUID = CBUUID(string: "2A37")
 
 class HRMViewController: UIViewController {
 
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var arrayData = [HeartRateDataItem]()
     
     @IBOutlet weak var heartRateLabel: UILabel!
     
@@ -22,19 +26,87 @@ class HRMViewController: UIViewController {
     var heartRatePeripheral: CBPeripheral!
     
     
+    
+    
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    //resetAllRecords(in: "HeartRateDataItem")
+      
     centralManager = CBCentralManager(delegate: self, queue: nil)
       
     
     heartRateLabel.font = UIFont.monospacedDigitSystemFont(ofSize: heartRateLabel.font!.pointSize, weight: .regular)
+      
+      getAllItems()
+      
   }
 
   func onHeartRateReceived(_ heartRate: Int) {
     heartRateLabel.text = String(heartRate)
     print("BPM: \(heartRate)")
   }
+    
+    // MARK: CORE DATA
+    
+    func getAllItems() {
+        do {
+            arrayData = try context.fetch(HeartRateDataItem.fetchRequest())
+            
+            DispatchQueue.main.async {
+                //self.homeTableView.reloadData()
+                print(self.arrayData)
+            }
+        }
+        
+        catch {
+            print("error")
+        }
+    }
+    
+    func createItem(bpm: String) {
+        // Check if the new bpm value is different from the last value in the arrayData
+        if arrayData.count == 0 || arrayData.last!.bpm != bpm {
+            let newItem = HeartRateDataItem(context: context)
+            newItem.bpm = bpm
+            arrayData.append(newItem)
+            do {
+                try context.save()
+            } catch {
+                print("error")
+            }
+        }
+    }
+
+    
+    func deleteItem(item: HeartRateDataItem) {
+        context.delete(item)
+        
+        do {
+            try context.save()
+            getAllItems()
+        }
+        catch {
+            
+        }
+    }
+    
+    func resetAllRecords(in HeartRateDataItem : String)
+        {
+            let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: HeartRateDataItem)
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+            do
+            {
+                try context.execute(deleteRequest)
+                try context.save()
+            }
+            catch
+            {
+                print ("There was an error")
+            }
+        }
+    
+    
 }
 
 extension HRMViewController: CBCentralManagerDelegate {
@@ -102,6 +174,7 @@ extension HRMViewController: CBPeripheralDelegate {
       case heartRateMeasurementCharacteristicCBUUID:
         let bpm = heartRate(from: characteristic)
         onHeartRateReceived(bpm)
+        createItem(bpm: String(bpm))
       default:
         print("Unhandled Characteristic UUID: \(characteristic.uuid)")
       }
