@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hh5-DK-AMg">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Heart Rate Monitor-->
+        <scene sceneID="Z6O-5b-XP3">
+            <objects>
+                <viewController id="hh5-DK-AMg" customClass="HRMViewController" customModule="HeartRateMonitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PE4-TP-Al9">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="yXs-fA-MVC">
+                                <rect key="frame" x="60.666666666666657" y="244.33333333333334" width="272" height="363.33333333333326"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UTD-th-9cE">
+                                        <rect key="frame" x="0.0" y="0.0" width="272" height="231.66666666666666"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pmk-Or-DWc">
+                                                <rect key="frame" x="0.0" y="0.0" width="272" height="40.666666666666664"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Current Heart Rate">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="system" size="34"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2x-aZ-9QP">
+                                                <rect key="frame" x="67.333333333333329" y="40.666666666666657" width="137.33333333333337" height="191"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="160"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="F0N-Bd-vNp">
+                                        <rect key="frame" x="0.0" y="331.66666666666663" width="272" height="31.666666666666686"/>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qI8-aP-48x"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yXs-fA-MVC" firstAttribute="centerY" secondItem="PE4-TP-Al9" secondAttribute="centerY" id="8dN-ji-Dd8"/>
+                            <constraint firstItem="yXs-fA-MVC" firstAttribute="centerX" secondItem="PE4-TP-Al9" secondAttribute="centerX" id="BF6-qY-3oG"/>
+                            <constraint firstItem="yXs-fA-MVC" firstAttribute="top" secondItem="qI8-aP-48x" secondAttribute="top" constant="185.33333333333331" id="b8L-En-Xnr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Heart Rate Monitor" id="NpO-lc-qc5"/>
+                    <connections>
+                        <outlet property="heartRateLabel" destination="J2x-aZ-9QP" id="nsG-gX-YOL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SiL-iR-7Do" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="903" y="-15"/>
+        </scene>
+    </scenes>
+</document>
